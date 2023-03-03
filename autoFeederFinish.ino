@@ -5,7 +5,7 @@
 Servo servo ;
 #define BLYNK_TEMPLATE_ID           "TMPLxxxxxx"
 #define BLYNK_DEVICE_NAME           "Auto Feeder"
-#define BLYNK_AUTH_TOKEN            "BEYPFBxblVIFTq371lZUzosRsjckoeOF"
+#define BLYNK_AUTH_TOKEN            ""
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Enrique174_2.4G";
 char pass[] = "OakSia174";
