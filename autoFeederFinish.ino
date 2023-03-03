@@ -5,7 +5,7 @@
 Servo servo ;
 #define BLYNK_TEMPLATE_ID           "TMPLxxxxxx"
 #define BLYNK_DEVICE_NAME           "Auto Feeder"
-#define BLYNK_AUTH_TOKEN            "*********************"
+#define BLYNK_AUTH_TOKEN            "BEYPFBxblVIFTq371lZUzosRsjckoeOF"
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "Enrique174_2.4G";
 char pass[] = "OakSia174";
@@ -20,29 +20,20 @@ BLYNK_WRITE(V1)
 {
   int pinValue = param.asInt();
   // assigning incoming value from pin V1 to a variable
-  
+  Serial.println(pinValue) ;
   if(pinValue == 1){
     feed();
   }
 }
-
-
-
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   servo.attach(13) ;
+  servo.write(0) ;
   pinMode(15,INPUT);
   Blynk.begin(auth, ssid, pass);
-  while(!Blynk.connected()){
-    Serial.print(".") ;
-  }
 }
 
-
-
 void loop() {
-  // put your main code here, to run repeatedly:
   Blynk.run();
   if(digitalRead(15)==LOW){
     feed();
